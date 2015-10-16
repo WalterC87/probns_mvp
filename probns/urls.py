@@ -7,5 +7,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^userTypes/(?P<desc>[\w-]+)/', 'usuarios.views.userType_view', name='userType_view'),
+   # url(r'^userTypes/(?P<desc>[\w-]+)/', 'usuarios.views.userType_view', name='userType_view'),
 ]

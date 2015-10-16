@@ -21,7 +21,7 @@ class mensaje(models.Model):
 	idAccionMensaje = models.ForeignKey(accion_mensaje)
 	idRemitente = models.ForeignKey('usuarios.usuario', related_name='remitente')
 	idDestinatario = models.ForeignKey('usuarios.usuario', related_name='destinatario')
-	message = models.TextField
+	message = models.TextField()
 	message_date = models.DateTimeField(auto_now_add=True)
 	status = models.BooleanField(default=True)
 

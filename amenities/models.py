@@ -20,7 +20,7 @@ class amenity(models.Model):
 class amenity_inmueble(models.Model):
 	idInmueble = models.ForeignKey('inmuebles.inmueble')
 	idAmenity = models.ForeignKey(amenity)
-	Cantidad = models.PositiveIntegerField
+	Cantidad = models.PositiveIntegerField(default=0)
 	status = models.BooleanField(default=True)
 
 	class Meta:

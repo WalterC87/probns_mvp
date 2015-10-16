@@ -31,11 +31,14 @@ class Usuario(models.Model):
 		db_table = 'usuario'
 
 class reviewUsuario(models.Model):
-	idUsuario = models.ForeignKey(Usuario, related_name='idUsuario')
-	idUsuarioReview = models.ForeignKey(Usuario, related_name='idUserReview')
+	idUsuario = models.ForeignKey(Usuario, related_name='Usuario')
+	idUsuarioReview = models.ForeignKey(Usuario, related_name='UserReview')
 	review = models.CharField(max_length=1250)
-	ranking = models.IntegerField
+	ranking = models.IntegerField()
 	status = models.BooleanField(default=True)
 
 	class Meta:
 		db_table = 'review_usuario'
+
+
+

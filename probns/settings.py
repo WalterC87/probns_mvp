@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'amenities',
     'trackings',
     'mensajes',
+    'clientes',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,7 +55,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+#    'django.middleware.security.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'probns.urls'
@@ -75,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'probns.wsgi.application'
+#WSGI_APPLICATION = 'probns.wsgi.application'
 
 SOUTH_DATABASE_ADAPTERS = {
     'default' : "south.db.mysql"
@@ -89,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'probns',
         'USER': 'root',
-        'PASSWORD': 'Probns2015',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
     }

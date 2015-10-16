@@ -1,6 +1,7 @@
 from django.db import models
 from paises.models import *
 from usuarios.models import *
+from clientes.models import *
 
 class tipo_inmueble(models.Model):
 	description = models.CharField(max_length=100)
@@ -38,7 +39,7 @@ class inmueble(models.Model):
 	longitude = models.CharField(max_length=50, blank=True)
 	construction_area = models.DecimalField(max_digits=10,decimal_places=2)
 	property_extention = models.DecimalField(max_digits=10,decimal_places=2)
-	year_construction = models.PositiveIntegerField
+	year_construction = models.PositiveIntegerField()
 	creation_date = models.DateTimeField(auto_now_add=True)
 	release_date = models.DateTimeField(auto_now_add=True)
 	observations = models.TextField(blank=True)
@@ -64,6 +65,16 @@ class inmuebles_usuario(models.Model):
 
 	class Meta:
 		db_table = 'inmuebles_usuario'
+
+class inmuebles_cliente(models.Model):
+	idCliente = models.ForeignKey('clientes.cliente')
+	idInmueble = models.ForeignKey(inmueble)
+	assigned_date = models.DateTimeField(auto_now_add=True)
+	sold_date = models.DateTimeField(auto_now_add=False, blank=True)
+	status = models.BooleanField(default=True)
+
+	class Meta:
+		db_table = 'inmuebles_cliente'
 
 class review_inmueble(models.Model):
 	idPadre = models.ForeignKey('self')
